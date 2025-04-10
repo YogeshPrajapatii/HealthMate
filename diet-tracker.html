@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Tracker - HealthMate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="light-mode">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="index.html">
+                    <img src="medical-aid.png" alt="HealthMate Logo" class="logo">
+                    <span>HealthMate</span>
+                </a>
+            </div>
+            <div class="navbar-menu" id="navbarMenu">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="index.html#features" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="index.html#analyzer" class="nav-link">Report Analyzer</a></li>
+                    <li class="nav-item"><a href="diet-tracker.html" class="nav-link active">Diet Tracker</a></li>
+                    <li class="nav-item"><a href="index.html#about" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Diet Tracker Section -->
+    <section class="diet-tracker">
+        <div class="container">
+            <div class="section-header">
+                <h2>Diet Tracker</h2>
+                <p>Track your daily meals and calorie intake</p>
+            </div>
+            <div class="diet-container">
+                <!-- Meal Input Form -->
+                <div class="meal-input">
+                    <h3>Add Meal</h3>
+                    <form id="mealForm">
+                        <div class="form-group">
+                            <label for="mealType">Meal Type</label>
+                            <select id="mealType" class="form-control" required>
+                                <option value="">Select meal type</option>
+                                <option value="breakfast">Breakfast</option>
+                                <option value="lunch">Lunch</option>
+                                <option value="dinner">Dinner</option>
+                                <option value="snack">Snack</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="foodItem">Food Item</label>
+                            <input type="text" id="foodItem" class="form-control" placeholder="Enter food item" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="calories">Calories</label>
+                            <input type="number" id="calories" class="form-control" placeholder="Enter calories" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Meal</button>
+                    </form>
+                </div>
+
+                <!-- Meal List -->
+                <div class="meal-list">
+                    <h3>Today's Meals</h3>
+                    <div class="meals-container" id="mealsContainer">
+                        <!-- Meals will be added here dynamically -->
+                    </div>
+                </div>
+
+                <!-- Daily Summary -->
+                <div class="daily-summary">
+                    <h3>Daily Summary</h3>
+                    <div class="summary-card">
+                        <div class="summary-item">
+                            <span>Total Meals</span>
+                            <span id="totalMeals">0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Total Calories</span>
+                            <span id="totalCalories">0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Average per Meal</span>
+                            <span id="avgCalories">0</span>
+                        </div>
+                    </div>
+                    <div class="summary-suggestion" id="suggestion">
+                        Start adding your meals to get personalized suggestions.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html">
+                        <img src="medical-aid.png" alt="HealthMate Logo" class="logo">
+                        <span>HealthMate</span>
+                    </a>
+                    <p>Your personal health assistant powered by AI technology.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 HealthMate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="diet-tracker.js"></script>
+</body>
+</html> 

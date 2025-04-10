@@ -25,6 +25,7 @@
                     <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
                     <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
                     <li class="nav-item"><a href="#analyzer" class="nav-link">Report Analyzer</a></li>
+                    <li class="nav-item"><a href="diet-tracker.html" class="nav-link">Diet Tracker</a></li>
                     <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
                     <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
@@ -215,22 +216,184 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- Health Calculator Section -->
+    <section id="health-calculator" class="health-calculator">
         <div class="container">
             <div class="section-header">
-                <h2>About HealthMate</h2>
-                <p>Our mission is to make health information accessible and understandable for everyone</p>
+                <h2>Health Calculators</h2>
+                <p>Calculate your health metrics and daily needs</p>
             </div>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="Lifesavers - Using Computer.png" alt="About HealthMate">
+            <div class="calculators-container">
+                <!-- BMI Calculator -->
+                <div class="calculator-card">
+                    <div class="calculator-header">
+                        <i class="fas fa-weight"></i>
+                        <h3>BMI Calculator</h3>
+                    </div>
+                    <form id="bmi-form" class="calculator-form">
+                        <div class="form-group">
+                            <label for="height">Height (cm)</label>
+                            <input type="number" id="height" class="form-control" placeholder="Enter height" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="weight">Weight (kg)</label>
+                            <input type="number" id="weight" class="form-control" placeholder="Enter weight" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Calculate BMI</button>
+                    </form>
+                    <div class="calculator-result" id="bmi-result" style="display: none;">
+                        <div class="result-value" id="bmi-value"></div>
+                        <div class="result-category" id="bmi-category"></div>
+                        <div class="result-description" id="bmi-description"></div>
+                    </div>
                 </div>
-                <div class="about-text">
-                    <h3>Empowering Health Decisions</h3>
-                    <p>HealthMate was founded with a simple mission: to help people understand their health reports without medical jargon. Our team of healthcare professionals and AI experts have developed a platform that translates complex medical data into easy-to-understand insights.</p>
-                    <p>We believe that when people understand their health better, they make better health decisions. Our AI-powered analysis helps identify potential health concerns early and provides actionable recommendations to improve overall wellbeing.</p>
-                    <p>HealthMate is committed to privacy and security. We use state-of-the-art encryption and never store your health reports permanently. Your data is yours alone.</p>
+
+                <!-- BMR Calculator -->
+                <div class="calculator-card">
+                    <div class="calculator-header">
+                        <i class="fas fa-fire"></i>
+                        <h3>BMR Calculator</h3>
+                    </div>
+                    <form id="bmr-form" class="calculator-form">
+                        <div class="form-group">
+                            <label for="gender-bmr">Gender</label>
+                            <select id="gender-bmr" class="form-control" required>
+                                <option value="">Select gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="age-bmr">Age (years)</label>
+                            <input type="number" id="age-bmr" class="form-control" placeholder="Enter age" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="height-bmr">Height (cm)</label>
+                            <input type="number" id="height-bmr" class="form-control" placeholder="Enter height" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="weight-bmr">Weight (kg)</label>
+                            <input type="number" id="weight-bmr" class="form-control" placeholder="Enter weight" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Calculate BMR</button>
+                    </form>
+                    <div class="calculator-result" id="bmr-result" style="display: none;">
+                        <div class="result-value" id="bmr-value"></div>
+                        <div class="result-description">Calories per day at rest</div>
+                    </div>
+                </div>
+
+                <!-- Daily Calorie Needs Calculator -->
+                <div class="calculator-card">
+                    <div class="calculator-header">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Daily Calorie Needs</h3>
+                    </div>
+                    <form id="calories-form" class="calculator-form">
+                        <div class="form-group">
+                            <label for="gender-calories">Gender</label>
+                            <select id="gender-calories" class="form-control" required>
+                                <option value="">Select gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="age-calories">Age (years)</label>
+                            <input type="number" id="age-calories" class="form-control" placeholder="Enter age" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="height-calories">Height (cm)</label>
+                            <input type="number" id="height-calories" class="form-control" placeholder="Enter height" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="weight-calories">Weight (kg)</label>
+                            <input type="number" id="weight-calories" class="form-control" placeholder="Enter weight" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="activity-level">Activity Level</label>
+                            <select id="activity-level" class="form-control" required>
+                                <option value="">Select activity level</option>
+                                <option value="sedentary">Sedentary (little or no exercise)</option>
+                                <option value="light">Light (exercise 1-3 days/week)</option>
+                                <option value="moderate">Moderate (exercise 3-5 days/week)</option>
+                                <option value="active">Active (exercise 6-7 days/week)</option>
+                                <option value="very-active">Very Active (hard exercise & physical job)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Calculate Calories</button>
+                    </form>
+                    <div class="calculator-result" id="calories-result" style="display: none;">
+                        <div class="result-value" id="calories-value"></div>
+                        <div class="result-description">Calories per day</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diet Tracker Section -->
+    <section id="diet-tracker" class="diet-tracker">
+        <div class="container">
+            <div class="section-header">
+                <h2>Diet Tracker</h2>
+                <p>Track your daily meals and calorie intake</p>
+            </div>
+            <div class="diet-container">
+                <!-- Meal Input Form -->
+                <div class="meal-input">
+                    <h3>Add Meal</h3>
+                    <form id="mealForm">
+                        <div class="form-group">
+                            <label for="mealType">Meal Type</label>
+                            <select id="mealType" class="form-control" required>
+                                <option value="">Select meal type</option>
+                                <option value="breakfast">Breakfast</option>
+                                <option value="lunch">Lunch</option>
+                                <option value="dinner">Dinner</option>
+                                <option value="snack">Snack</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="foodItem">Food Item</label>
+                            <input type="text" id="foodItem" class="form-control" placeholder="Enter food item" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="calories">Calories</label>
+                            <input type="number" id="calories" class="form-control" placeholder="Enter calories" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add to Tracker</button>
+                    </form>
+                </div>
+
+                <!-- Meal List -->
+                <div class="meal-list">
+                    <h3>Today's Meals</h3>
+                    <div class="meals-container" id="mealsContainer">
+                        <!-- Meals will be added here dynamically -->
+                    </div>
+                </div>
+
+                <!-- Daily Summary -->
+                <div class="daily-summary">
+                    <h3>Daily Summary</h3>
+                    <div class="summary-card">
+                        <div class="summary-item">
+                            <span>Total Meals</span>
+                            <span id="totalMeals">0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Total Calories</span>
+                            <span id="totalCalories">0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Average per Meal</span>
+                            <span id="avgCalories">0</span>
+                        </div>
+                    </div>
+                    <div class="summary-suggestion" id="suggestion">
+                        Start adding your meals to get personalized suggestions.
+                    </div>
                 </div>
             </div>
         </div>
@@ -246,37 +409,58 @@
             <div class="testimonials-container">
                 <div class="testimonial">
                     <div class="testimonial-content">
-                        <p>"HealthMate helped me understand my cholesterol report and gave me practical advice on how to improve my numbers. Within 3 months, my LDL levels dropped significantly!"</p>
+                        <p>"I use this platform daily for quick health checks. The AI bot is fantastic and helps me understand my reports in simple Hindi. Perfect for someone like me who isn't tech-savvy!"</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
                     </div>
                     <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah J.">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop" alt="Priya Sharma">
                         <div>
-                            <h4>Sarah J.</h4>
-                            <p>HealthMate User</p>
+                            <h4>Priya Sharma</h4>
+                            <p>Homemaker, Mumbai</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial">
                     <div class="testimonial-content">
-                        <p>"As someone without a medical background, I always found my blood test reports confusing. HealthMate breaks everything down in simple terms and helps me track my progress over time."</p>
+                        <p>"Such a helpful tool for my parents — simple and in Hindi too! The daily health tips are practical and the BMI calculator helps us track our fitness goals regularly."</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
                     </div>
                     <div class="testimonial-author">
-                        <img src=" https://randomuser.me/api/portraits/women/68.jpg " alt="Michael T.">
+                        <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&h=100&fit=crop" alt="Rakesh Verma">
                         <div>
-                            <h4>Bharat</h4>
-                            <p>HealthMate User</p>
+                            <h4>Rakesh Verma</h4>
+                            <p>Software Engineer, Bangalore</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial">
                     <div class="testimonial-content">
-                        <p>"The personalized recommendations are what make HealthMate stand out. It doesn't just tell you what's wrong, it gives you specific steps to improve your health metrics."</p>
+                        <p>"Love the daily health tips and the calculator helps a lot. As a fitness enthusiast, I find the calorie tracker extremely useful. The interface is clean and easy to use!"</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
                     </div>
                     <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Lisa R.">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop" alt="Ayaan Sheikh">
                         <div>
-                            <h4>Lisa R.</h4>
-                            <p>HealthMate User</p>
+                            <h4>Ayaan Sheikh</h4>
+                            <p>Fitness Trainer, Delhi</p>
                         </div>
                     </div>
                 </div>
@@ -296,22 +480,22 @@
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h3>Address</h3>
-                            <p>123 Health Street, Medical District, New York, NY 10001</p>
+                            <h3>Location</h3>
+                            <p>Bhiwani, Haryana, India</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>Email</h3>
-                            <p>support@healthmate.com</p>
+                            <p>yogeshdeveloper32@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
                         <div>
                             <h3>Phone</h3>
-                            <p>+1 (555) 123-4567</p>
+                            <p>+91 97285 26371</p>
                         </div>
                     </div>
                     <div class="social-links">
@@ -341,6 +525,43 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Health Tips Section -->
+    <section id="health-tips" class="health-tips">
+        <div class="container">
+            <div class="section-header">
+                <h2>Daily Health Tips</h2>
+                <p>Simple tips for a healthier lifestyle</p>
+            </div>
+            <div class="tips-container">
+                <div class="tip-card">
+                    <i class="fas fa-tint"></i>
+                    <h3>Stay Hydrated</h3>
+                    <p>Drink 2-3 liters of water daily to maintain proper hydration and support bodily functions.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Never Skip Breakfast</h3>
+                    <p>Start your day with a nutritious breakfast to boost metabolism and maintain energy levels.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-walking"></i>
+                    <h3>Morning Stretching</h3>
+                    <p>Do light stretching every morning to improve flexibility and reduce muscle stiffness.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-moon"></i>
+                    <h3>Quality Sleep</h3>
+                    <p>Aim for 7-8 hours of sleep each night to allow your body to repair and rejuvenate.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-apple-alt"></i>
+                    <h3>Balanced Diet</h3>
+                    <p>Include a variety of fruits, vegetables, and whole grains in your daily meals.</p>
                 </div>
             </div>
         </div>
@@ -442,5 +663,7 @@
     <script src="firebase-config.js"></script>
     <script src="app.js"></script>
     <script src="theme.js"></script>
+    <script src="calculators.js"></script>
+    <script src="diet-tracker.js"></script>
 </body>
 </html>
